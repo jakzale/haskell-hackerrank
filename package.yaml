@@ -1,0 +1,20 @@
+name:                haskell-hackerrank
+version:             0.1.0.0
+#synopsis:
+#description:
+homepage:            https://github.com/jakzale/haskell-hackerrank#readme
+license:             BSD3
+author:              Jakub Zalewski
+maintainer:          jakzale@gmail.com
+copyright:           Copyright (c) 2019 Jakub Zalewski
+category:            Web
+extra-source-files:
+- README.md
+
+dependencies:
+  - base >= 4.7 && < 5
+
+executables:
+  haskell-hackerrank:
+    source-dirs:      src
+    main:             Main.hs

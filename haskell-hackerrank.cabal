@@ -1,0 +1,30 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 9dddbac004ba09ef343f785f79656c30a6519919d6ea71aea41a83f217858334
+
+name:           haskell-hackerrank
+version:        0.1.0.0
+category:       Web
+homepage:       https://github.com/jakzale/haskell-hackerrank#readme
+author:         Jakub Zalewski
+maintainer:     jakzale@gmail.com
+copyright:      Copyright (c) 2019 Jakub Zalewski
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+executable haskell-hackerrank
+  main-is: Main.hs
+  other-modules:
+      Paths_haskell_hackerrank
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
