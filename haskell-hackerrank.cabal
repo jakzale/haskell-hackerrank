@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 9dddbac004ba09ef343f785f79656c30a6519919d6ea71aea41a83f217858334
+-- hash: 786ca8612cce609b112d81318d8ca84b2f85542a3dcd7ba384baa79dfac98ac4
 
 name:           haskell-hackerrank
 version:        0.1.0.0
@@ -22,9 +22,24 @@ extra-source-files:
 executable haskell-hackerrank
   main-is: Main.hs
   other-modules:
+      ArrayManipulation
+      CountingValleys
+      JumpingOnClouds
+      MinimumSwapsTwo
+      PolygonArea
+      PolygonPerimeter
+      RepeatedString
+      Util
       Paths_haskell_hackerrank
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5
+      array
+    , base >=4.7 && <5
+    , containers
+    , monad-loops
+    , split
+    , text
+    , vector
+    , vector-algorithms
   default-language: Haskell2010

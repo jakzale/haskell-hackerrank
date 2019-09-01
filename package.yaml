@@ -13,6 +13,13 @@ extra-source-files:
 
 dependencies:
   - base >= 4.7 && < 5
+  - text
+  - containers
+  - array
+  - split
+  - vector
+  - vector-algorithms
+  - monad-loops
 
 executables:
   haskell-hackerrank:
