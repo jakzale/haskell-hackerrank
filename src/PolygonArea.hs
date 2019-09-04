@@ -2,7 +2,17 @@ module PolygonArea where
 
 import Control.Monad (replicateM)
 import Text.Printf (printf)
-import Util
+
+parseInt :: String -> Int
+parseInt = read
+
+parseInts :: String -> [Int]
+parseInts = fmap parseInt . words
+
+parse2I :: String -> (Int, Int)
+parse2I str = (a, b)
+  where
+    [a, b] = parseInts str
 
 calcArea :: [(Int, Int)] -> Double
 calcArea points = sum triangleAreas
@@ -31,6 +41,6 @@ tasselate ((x1, y1):rest) = map mkTriangle (zip rest (drop 1 rest))
 main :: IO ()
 main = do
   n <- readLn :: IO Int
-  points <- replicateM n $ getLine >>= pure . extract2I
+  points <- replicateM n $ parse2I <$> getLine
   let perimeter = calcArea points
   printf "%.1f" perimeter
