@@ -12,7 +12,7 @@ parseInt :: String -> Int
 parseInt = read
 
 parseInts :: String -> [Int]
-parseInts = map parseInt . words
+parseInts = fmap parseInt . words
 
 parse2I :: String -> (Int, Int)
 parse2I str = (a, b)
