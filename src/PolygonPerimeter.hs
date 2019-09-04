@@ -1,8 +1,18 @@
 module PolygonPerimeter where
 
-import Util
 import Control.Monad (replicateM, replicateM_)
 import Text.Printf (printf)
+
+parseInt :: String -> Int
+parseInt = read
+
+parseInts :: String -> [Int]
+parseInts = fmap parseInt . words
+
+parse2I :: String -> (Int, Int)
+parse2I str = (a, b)
+  where
+    [a, b] = parseInts str
 
 calcPerimeter :: [(Int, Int)] -> Double
 calcPerimeter points = sum distances
@@ -32,6 +42,6 @@ points =
 main :: IO ()
 main = do
   n <- readLn :: IO Int
-  points <- replicateM n $ getLine >>= pure . extract2I
+  points <- replicateM n $ parse2I <$> getLine
   let perimeter = calcPerimeter points
   printf "%.1f" perimeter
