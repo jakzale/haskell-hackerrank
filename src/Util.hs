@@ -1,24 +1,31 @@
 module Util where
 
--- Utility functions for working with HackerRank.  Although they will
--- be copied per each solution.
+-- Utility functions for working with HackerRank.  They need to be
+-- copied to each solution.  WARNING: These are quick and dirty, not
+-- to used in prod code.
 
+import Control.Monad (replicateM)
 
-import qualified Data.Text as T
+parseInt :: String -> Int
+parseInt = read 
 
-split :: Char -> String -> [String]
-split sep str = map T.unpack nonEmpty
+parseInts :: String -> [Int]
+parseInts = map parseInt . words
+
+parse2I :: String -> (Int, Int)
+parse2I str = (a, b)
   where
-    splitted = T.split (==sep) (T.pack str)
-    nonEmpty = filter (\x -> T.length x > 0) splitted
+    [a, b] = parseInts str
 
-split' :: String -> [String]
-split' = split ' '
-
-extract2I :: String -> (Int, Int)
-extract2I row = (x, y)
+parse3I :: String -> (Int, Int, Int)
+parse3I str = (a, b, c)
   where
-    [x, y] = map read (split' row)
+    [a, b, c] = parseInts str
 
+parse4I :: String -> (Int, Int, Int, Int)
+parse4I str = (a, b, c, d)
+  where
+    [a, b, c, d] = parseInts str
 
-
+getNLines :: Int -> IO [String]
+getNLines n = replicateM n getLine
