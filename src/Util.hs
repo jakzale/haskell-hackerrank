@@ -7,7 +7,7 @@ module Util where
 import Control.Monad (replicateM)
 
 parseInt :: String -> Int
-parseInt = read 
+parseInt = read
 
 parseInts :: String -> [Int]
 parseInts = fmap parseInt . words
