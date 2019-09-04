@@ -1,17 +1,16 @@
-{-# LANGUAGE FlexibleInstances, UndecidableInstances, DuplicateRecordFields #-}
-
 module JumpingOnClouds where
 
-import Control.Monad
-import Data.Array
-import Data.Bits
 import Data.List
-import Data.List.Split
-import Data.Set
 import Debug.Trace
 import System.Environment
 import System.IO
 import System.IO.Unsafe
+
+parseInt :: String -> Int
+parseInt = read
+
+parseInts :: String -> [Int]
+parseInts = fmap parseInt . words
 
 -- Complete the jumpingOnClouds function below.
 jumpingOnClouds :: [Int] -> Int
@@ -30,10 +29,7 @@ main = do
     fptr <- openFile stdout WriteMode
 
     n <- readLn :: IO Int
-
-    cTemp <- getLine
-
-    let c = Data.List.map (read :: String -> Int) . words $ cTemp
+    c <- parseInts <$> getLine
 
     let result = jumpingOnClouds c
 
