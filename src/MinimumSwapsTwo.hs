@@ -1,5 +1,3 @@
-{-# LANGUAGE FlexibleInstances, UndecidableInstances, DuplicateRecordFields #-}
-
 module MinimumSwapsTwo where
 
 import           Debug.Trace
@@ -8,11 +6,17 @@ import           System.IO
 import           Data.List
 import qualified Data.Vector.Unboxed as V
 import qualified Data.Vector.Unboxed.Mutable as M
--- import           Data.Vector.Algorithms.Merge (sortBy)
 import           Control.Monad.ST
 import           Control.Monad
--- import           Control.Monad.Loops
 import           Data.Ord
+
+parseInt :: String -> Int
+parseInt = read
+
+parseInts :: String -> [Int]
+parseInts = fmap parseInt . words
+
+-- The following two functions taken from monad-loops
 
 -- |Execute an action repeatedly as long as the given boolean expression
 -- returns True.  The condition is evaluated before the loop body.
@@ -43,11 +47,12 @@ minimumSwaps arr = runST $ do
     \i -> do
       let cond = do
             x <- M.unsafeRead v i
-            let index = snd x
-            pure $ snd x /= i
+            let destination = snd x
+            pure $ destination /= i
       innerSwaps <- whileM cond $ do
         x <- M.unsafeRead v i
-        M.swap v (snd x) i
+        let destination = snd x
+        M.swap v destination i
         pure 1
       pure (sum innerSwaps)
   pure (sum swaps)
@@ -63,10 +68,7 @@ main = do
     fptr <- openFile stdout WriteMode
 
     n <- readLn :: IO Int
-
-    arrTemp <- getLine
-
-    let arr = fmap (read :: String -> Int) . words $ arrTemp
+    arr <- parseInts <$> getLine
 
     let res = minimumSwaps arr
 
