@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 786ca8612cce609b112d81318d8ca84b2f85542a3dcd7ba384baa79dfac98ac4
+-- hash: 7ae8ec165b9e8cf2f103b862e7da7bff51c315d4eab333ce2d4c2b21f86d9442
 
 name:           haskell-hackerrank
 version:        0.1.0.0
@@ -26,9 +26,11 @@ executable haskell-hackerrank
       CountingValleys
       JumpingOnClouds
       MinimumSwapsTwo
+      PascalTriangle
       PolygonArea
       PolygonPerimeter
       RepeatedString
+      SierpinksiTriangles
       Util
       Paths_haskell_hackerrank
   hs-source-dirs:
