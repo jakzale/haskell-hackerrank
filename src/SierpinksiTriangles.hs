@@ -15,7 +15,7 @@ trianglePoints top height = trianglePoints' top 0
       | currHeight < height = pointsRow (x, y) currHeight
                               ++ trianglePoints' (x, y + 1) (currHeight + 1)
       | otherwise = []
-    
+
 pointsRow :: Point -> Int -> [Point]
 pointsRow (x, y) halfW = [(x1, y) | x1 <- [x - halfW .. x + halfW]]
 
