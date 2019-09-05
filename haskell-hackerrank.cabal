@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 928707768537bec6f4cfe09640a901671ec7934f951ecf4b8c8ef7c33fb01117
+-- hash: 8ff098bff726cde1d5adb49011bc9e7bbdcdea1b39042193ab4f8bbedaf6312a
 
 name:           haskell-hackerrank
 version:        0.1.0.0
@@ -32,6 +32,7 @@ executable haskell-hackerrank
       PrefixCompression
       RepeatedString
       SierpinksiTriangles
+      StringReductions
       Util
       Paths_haskell_hackerrank
   hs-source-dirs:
