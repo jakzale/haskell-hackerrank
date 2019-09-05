@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 7ae8ec165b9e8cf2f103b862e7da7bff51c315d4eab333ce2d4c2b21f86d9442
+-- hash: 928707768537bec6f4cfe09640a901671ec7934f951ecf4b8c8ef7c33fb01117
 
 name:           haskell-hackerrank
 version:        0.1.0.0
@@ -29,6 +29,7 @@ executable haskell-hackerrank
       PascalTriangle
       PolygonArea
       PolygonPerimeter
+      PrefixCompression
       RepeatedString
       SierpinksiTriangles
       Util
